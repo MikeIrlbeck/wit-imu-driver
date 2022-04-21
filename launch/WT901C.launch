@@ -1,16 +1,18 @@
 <launch>
 
     <!-- <include file="$(find orb_slam2)/launch/include/rs_rgbd.launch"></include > -->
-
-    <node pkg="tf" type="static_transform_publisher" name="tf_bc" args="0.3 0 0.35 0 0 0 /base_link /imu_link 100" /> 
+    <arg name="serial_port"/>
+    <arg name="frame_id" />
+    <arg name="imu_topic" />
+    <arg name="publish_mag"/>
 
     <node pkg="wit-imu-driver" type="wit-imu-driver_node" name="imu_node" output="screen">
-        <param name="port" value="ttyUSB1"/>
+        <param name="port" value="$(arg serial_port)"/>
         <param name="baudrate" value="9600"/>
         <param name="publish_rate" value="20"/>
-        <param name="publish_mag" value="true"/>
-        <param name="imu_topic" value="imu_data"/>
+        <param name="publish_mag" value="$(arg publish_mag)"/>
+        <param name="imu_topic" value="$(arg imu_topic)"/>
         <param name="mag_topic" value="mag_data"/>
-        <param name="imu_frame" value="imu_link"/>
+        <param name="imu_frame" value="$(arg frame_id)"/>
     </node>
 </launch>

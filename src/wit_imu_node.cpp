@@ -119,8 +119,10 @@ int main(int argc, char **argv)
             imu_data.angular_velocity.x = imu.gyro.x;
             imu_data.angular_velocity.y = imu.gyro.y;
             imu_data.angular_velocity.z = imu.gyro.z;
-            imu_data.linear_acceleration_covariance = {1e-6, 0, 0, 0, 1e-6, 0, 0, 0, 1e-6};
+            imu_data.angular_velocity_covariance = {1e-6, 0, 0, 0, 1e-6, 0, 0, 0, 1e-6};
+            // Error: imu_data.linear_acceleration_covariance = {1e-6, 0, 0, 0, 1e-6, 0, 0, 0, 1e-6};
 
+            // QUANTERIONS ARE WRONG
             imu_data.orientation.x = imu.quat.x;
             imu_data.orientation.y = imu.quat.y;
             imu_data.orientation.z = imu.quat.z;

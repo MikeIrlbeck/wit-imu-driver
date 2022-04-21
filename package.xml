@@ -20,11 +20,16 @@
   <build_depend>roscpp</build_depend>
   <build_depend>serial</build_depend>
   <build_depend>sensor_msgs</build_depend>
+  <!-- <build_depend>imu_tools</build_depend> -->
+  <!-- I could not get this tool to work correctly -->
+
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>
+  <!-- <build_export_depend>imu_tools</build_export_depend> -->
 
   <exec_depend>roscpp</exec_depend>
   <exec_depend>serial</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
+  <!-- <exec_depend>imu_tools</exec_depend> -->
 
 </package>
